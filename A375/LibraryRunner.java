@@ -11,18 +11,25 @@ public class LibraryRunner
     Library library = new Library();
     String authorToFind = "L. Frank Baum";
     ArrayList<Book> childrensBooks = library.getChildrensBooks();
+    
     for (Book x: childrensBooks) {
       if (x.getAuthor().equals(authorToFind)) {
         System.out.println(x.getTitle());
       }
     }
+    
     String bookToFind = "Sky Island";
     double minimumRating = 0.0;
-    for (Book x: childrensBooks) {
-      if (x.getTitle().equals(bookToFind)) {
-        System.out.println(x.getTitle());
-        System.out.
+    
+    for (Book y: childrensBooks) {
+      if (y.getTitle().contains(bookToFind)) {
+        System.out.println(y.getTitle());
+        minimumRating = y.getRating();
+
       }
     }
+  
+    
+    System.out.println(minimumRating);
   }
 }
